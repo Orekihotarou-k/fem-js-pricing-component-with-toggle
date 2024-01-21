@@ -1,0 +1,85 @@
+:root {
+    --clr-gradient-linear: #a3a8f0;
+    --clr-gradient-linear--2: #696fdd;
+
+
+    --clr-very-light-grayish-blue: #f6f6fe;
+    --clr-light-grayish-blue: #b3b5c6;
+    --clr-grayish-blue: #6d708d;
+    --clr-dark-grayish-blue: #494c5f; 
+
+    --ff-main: 'Montserrat', sans-serif;
+    --fw-700: 700;
+
+    --fs-price: 2rem; 
+    --fs-body: 0.938rem;
+}
+
+
+/* reset */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul, li {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    font-style: italic;
+    color: var(--clr-grayish-blue);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body {
+    font-family: var(--ff-main);
+    font-weight: var(--fw-700);
+    font-size: var(--fs-body);
+    color: var(--clr-dark-grayish-blue);
+    background-color: var(--clr-very-light-grayish-blue);  
+}
+
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+}
+
+body::before {
+    background: url(images/bg-top.svg) top right;
+    background-repeat: no-repeat;
+}
+
+body::after {
+    background: url(images/bg-bottom.svg) bottom left;
+    background-repeat: no-repeat;
+}
+
+
+/* general layout */
