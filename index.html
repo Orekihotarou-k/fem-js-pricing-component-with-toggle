@@ -22,19 +22,27 @@
 </head>
 <body>
 
-  <main class="wrapper">
+  <main class="wrapper split">
 
-    <h1 class="title">Our Pricing</h1>
-    <label for="price-slider">Annually 
-      <input type="checkbox" id="price-slider"> Monthly
-    </label>
+    <div>
+      <h1 class="title">Our Pricing</h1>
+    </div>
 
-    <section class="price-cards">
-      <div class="card">
+    <div class="price-slider spacer ">
+      <span>Annually</span>
+      <label class="price-toggle">
+        <input type="checkbox">
+      </label>
+      
+      <span>Monthly</span>
+    </div>
+
+    <section class="price-cards split spacer">
+      <div class="card card-spacer white-card">
         <h2 class="card-title">Basic</h2>
-        <span class="card-amount-month">&dollar;19.99</span>
-        <span class="card-amount-year">&dollar;199.99</span>
-        <div class="card-options">
+        <span class="card-amount month">&dollar;19.99</span>
+        <span class="card-amount year">&dollar;199.99</span>
+        <div class="card-options split">
           <span class="option">500 GB Storage</span>
           <span class="option">2 Users Allowed</span>
           <span class="option">Send up to 3 GB</span>
@@ -42,23 +50,23 @@
         <button class="card-button">Learn More</button>
       </div>
 
-      <div class="card">
+      <div class="card card-spacer purple-card">
         <h2 class="card-title">Professional</h2>
-        <span class="card-amount-month">&dollar;24.99</span>
-        <span class="card-amount-year">&dollar;249.99</span>
-        <div class="card-options">
+        <span class="card-amount month">&dollar;24.99</span>
+        <span class="card-amount year">&dollar;249.99</span>
+        <div class="card-options split">
           <span class="option">1 TB Storage</span>
           <span class="option">5 Users Allowed</span>
           <span class="option">Send up to 10 GB</span>
         </div>
-        <button class="card-button">Learn More</button>
+        <button class="card-button bg-white">Learn More</button>
       </div>
       
-      <div class="card">
+      <div class="card card-spacer white-card--2">
         <h2 class="card-title">Master</h2>
-        <span class="card-amount-month">&dollar;39.99</span>
-        <span class="card-amount-year">&dollar;399.99</span>
-        <div class="card-options">
+        <span class="card-amount month">&dollar;39.99</span>
+        <span class="card-amount year">&dollar;399.99</span>
+        <div class="card-options split">
           <span class="option">2 TB Storage</span>
           <span class="option">10 Users Allowed</span>
           <span class="option">Send up to 20 GB</span>
@@ -71,7 +79,7 @@
   <footer>
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="https://www.frontendmentor.io/profile/Orekihotarou-k">Levis Bohse</a>.
     </div>
   </footer>
 </body>
