@@ -11,8 +11,11 @@
     --ff-main: 'Montserrat', sans-serif;
     --fw-700: 700;
 
-    --fs-price: 2rem; 
+    --fs-price: 3.275rem; 
+    --fs-price-toggle: 1.8rem; 
     --fs-body: 0.938rem;
+
+    --br: 8px;
 }
 
 
@@ -43,6 +46,10 @@ a:hover {
     text-decoration: underline;
 }
 
+button {
+    font-family: inherit;
+}
+
 ul, li {
     list-style: none;
 }
@@ -60,7 +67,7 @@ body {
     font-family: var(--ff-main);
     font-weight: var(--fw-700);
     font-size: var(--fs-body);
-    color: var(--clr-dark-grayish-blue);
+    color: var(--clr-grayish-blue);
     background-color: var(--clr-very-light-grayish-blue);  
 }
 
@@ -69,6 +76,7 @@ body::after {
     content: '';
     position: absolute;
     inset: 0;
+    z-index: -2;
 }
 
 body::before {
@@ -82,4 +90,191 @@ body::after {
 }
 
 
+/* utitility classes */
+.spacer > * {
+    margin-top: 1em;
+    padding-top: 1rem;
+    border-top: 1px solid var(--clr-light-grayish-blue);
+}
+
+.split {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.split > * {
+    flex-basis: 100%;
+}
+
+.text-white {
+    color: var(--clr-very-light-grayish-blue) ip !important;
+}
+
+
+/* typography */
+.title {
+    font-size: var(--fs-price-toggle);
+}
+
+.card-title {
+    font-size: var(--fs-body);
+}
+
+.card-price {
+    display: inline-block;
+    font-size: var(--fs-price);
+    color: var(--clr-dark-grayish-blue);
+    padding: 1.75rem 0;
+}
+
+.card-price.monthly {
+    display: none;
+}
+
+.price-toggle--title {
+    color: var(--clr-light-grayish-blue);
+}
+
+
+/* components */
+.card-button {
+    display: inline-block;
+    width: 100%;
+    padding: .8rem;
+    margin-top: 2.5em;
+    border-radius: var(--br);
+    background: linear-gradient(to right, var(--clr-gradient-linear), var(--clr-gradient-linear--2));
+    border: none;
+    color: var(--clr-very-light-grayish-blue);
+    font-size: var(--fs-body);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background .3s ease, color .3s ease;
+}
+
+.card-button:hover {
+    color: var(--clr-gradient-linear--2);
+    background: transparent;
+    outline: 1px solid var(--clr-gradient-linear);
+}
+
+.bg-white {
+    color: var(--clr-gradient-linear--2);
+    background: var(--clr-very-light-grayish-blue);
+}
+
+.bg-white:hover {
+    color: var(--clr-very-light-grayish-blue);
+    background: transparent;
+    outline: 1px solid var(--clr-very-light-grayish-blue);
+}
+
+.price-toggle {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.price-toggle--label {
+    content: "";
+    width: 55px;
+    height: 30px;
+    color: var(--clr-very-light-grayish-blue);
+    border-radius: 999px;
+    position: relative;
+    background: linear-gradient(to right, var(--clr-gradient-linear), var(--clr-gradient-linear--2));
+}
+
+.price-toggle--label > input {
+    appearance: none;
+    content: "";
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    position: absolute;
+    top: .2rem;
+    left: .275rem;
+    background: var(--clr-very-light-grayish-blue);
+    transition: translate .3s ease;
+}
+
+#price-toggle--button:checked {
+    translate: 1.5rem 0;
+}
+
+.card {
+    text-align: center;
+    padding: 1.75rem;
+    background: #ffffff;
+}
+
+.price-cards {
+    margin-top: 2em;
+    filter: drop-shadow(0 2px 10px rgba(163, 168, 240, 0.459));
+}
+
+.price-cards > *:nth-child(3) {
+    border-top-right-radius: var(--br);
+    border-bottom-right-radius: var(--br);
+}
+
+.price-cards > *:nth-child(1) {
+    border-top-left-radius: var(--br);
+    border-bottom-left-radius: var(--br);
+}
+
+.price-cards > *:nth-child(2) {
+    background: linear-gradient(to bottom, var(--clr-gradient-linear), var(--clr-gradient-linear--2));
+    color: var(--clr-very-light-grayish-blue);
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    border-radius: var(--br);
+}
+
+.card-desc > *:nth-child(3) {
+    border-bottom: 1px solid var(--clr-light-grayish-blue);
+    padding-bottom: 1rem;
+}
+
+
 /* general layout */
+.price-cards {
+    width: 75%;
+    margin-inline: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.price-cards > * {
+    flex: 1 0 10rem;
+}
+
+.wrapper {
+    height: 100dvh;
+    padding: 4rem 0;
+}
+
+
+/* media query */ 
+
+@media (max-width: 61.75rem) {
+    .wrapper {
+        height: auto;
+    }
+
+    .price-cards {
+        gap: 2em;
+    }
+
+    .price-cards > * {
+        border-radius: var(--br);
+    }
+    
+    .price-cards > *:nth-child(2) {
+        padding: 1.75rem;
+        border-radius: var(--br);
+    }
+}
