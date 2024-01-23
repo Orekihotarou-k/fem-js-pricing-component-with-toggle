@@ -104,10 +104,6 @@ body::after {
     flex-direction: column;
 }
 
-.split > * {
-    flex-basis: 100%;
-}
-
 .text-white {
     color: var(--clr-very-light-grayish-blue) ip !important;
 }
