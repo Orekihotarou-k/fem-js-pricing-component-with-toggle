@@ -91,10 +91,15 @@ body::after {
 
 
 /* utitility classes */
+
 .spacer > * {
     margin-top: 1em;
     padding-top: 1rem;
     border-top: 1px solid var(--clr-light-grayish-blue);
+}
+
+.card-desc.middle.spacer > * {
+    border-color: var(--clr-very-light-grayish-blue);
 }
 
 .split {
@@ -256,7 +261,17 @@ body::after {
 .wrapper {
     height: 100dvh;
     padding: 4rem 0;
+    animation: fade 1s ease-in 0s 1 normal none;
 }
+
+@keyframes fade{
+    from {
+        opacity: 0;
+    } to {
+        opacity: 100%;
+    }
+}
+
 
 
 /* media query */ 
