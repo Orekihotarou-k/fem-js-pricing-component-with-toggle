@@ -1,12 +1,25 @@
 // create variables
-let priceChange = document.querySelector(".price-toggle--label")
-let cardPrice = document.querySelectorAll(".card-price")
+const priceToggle = document.querySelector(".price-toggle--button");
+const monthPriceElements = document.querySelectorAll('.card-price-monthly');
+const yearPriceElements = document.querySelectorAll('.card-price');
 
-// add event listener which changes the cardprice when toggled
-priceChange.addEventListener("click", () => {
-    // call function that changes classnames
-    priceSwap()
-})
+// Add event listener that calls the priceChange function
+if (priceToggle) {
+    priceToggle.addEventListener("click", priceChange);
+}
 
+// create function to swap prices when button is clicked
+function priceChange(event) {
 
+    // Toggle change of price elements
+    monthPriceElements.forEach((element) => {
+        element.style.display = element.style.display === "none" ? "block" : "none";
+    });
 
+    yearPriceElements.forEach((element) => {
+        element.style.display = element.style.display === "block" ? "none" : "block";
+    });
+
+    // toggle button active class
+    priceToggle.classList.toggle("active");
+}

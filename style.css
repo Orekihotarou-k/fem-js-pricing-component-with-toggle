@@ -122,16 +122,20 @@ body::after {
     font-size: var(--fs-body);
 }
 
-.card-price {
+.card-price,
+.card-price-monthly {
     display: inline-block;
     font-size: var(--fs-price);
     color: var(--clr-dark-grayish-blue);
     padding: 1.75rem 0;
+    display: block;
 }
 
-.card-price.monthly {
+.card-price-monthly {
     display: none;
 }
+
+
 
 .price-toggle--title {
     color: var(--clr-light-grayish-blue);
@@ -178,7 +182,7 @@ body::after {
     margin: 2rem 0;
 }
 
-.price-toggle--label {
+.price-toggle--button {
     content: "";
     width: 55px;
     height: 30px;
@@ -186,9 +190,10 @@ body::after {
     border-radius: 999px;
     position: relative;
     background: linear-gradient(to right, var(--clr-gradient-linear), var(--clr-gradient-linear--2));
+    border: none;
 }
 
-.price-toggle--label > input {
+.price-toggle--button::after {
     appearance: none;
     content: "";
     width: 23px;
@@ -201,7 +206,7 @@ body::after {
     transition: translate .3s ease;
 }
 
-#price-toggle--button:checked {
+.price-toggle--button.active::after {
     translate: 1.5rem 0;
 }
 
