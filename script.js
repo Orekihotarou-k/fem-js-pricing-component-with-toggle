@@ -23,3 +23,16 @@ function priceChange(event) {
     // toggle button active class
     priceToggle.classList.toggle("active");
 }
+
+// function to set initial styles for price toggles
+function init() {
+    monthPriceElements.forEach((element) => {
+      element.style.display = "none";
+    });
+  
+    yearPriceElements.forEach((element) => {
+      element.style.display = "block";
+    });
+  }
+  
+  init();

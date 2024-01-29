@@ -136,8 +136,6 @@ body::after {
     display: none;
 }
 
-
-
 .price-toggle--title {
     color: var(--clr-light-grayish-blue);
 }
@@ -192,6 +190,7 @@ body::after {
     position: relative;
     background: linear-gradient(to right, var(--clr-gradient-linear), var(--clr-gradient-linear--2));
     border: none;
+    cursor: pointer;
 }
 
 .price-toggle--button::after {
